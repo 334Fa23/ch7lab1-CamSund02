@@ -1,11 +1,11 @@
 /*
-Author: Maria Cruz
-Date: Current Date
+Author: Cameron Sunderman
+Date: 8/29/23
 File Name: styles.css
 */
 
 /* CSS Reset */
-body, header, nav, main, footer, img, h1, ul {
+body, header, nav, main, footer, img, h1, ul, section, aside, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -15,6 +15,11 @@ body, header, nav, main, footer, img, h1, ul {
 img {
     max-width: 100%;
     display: block;
+}
+
+/*Style rule for box sizing applies to all elements */
+*{
+    box-sizing: border-box;
 }
 
 /* Style rules for mobile viewport */
@@ -140,6 +145,32 @@ footer a {
     text-decoration: none;
 }
 
+aside {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #373684;
+    text-shadow: 3px 3px 10px #8280cb;
+}
+
+figure{
+    position: relative;
+    max-width: 275px;
+    margin: 2% auto;
+    border: 8px solid #373684;
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0;
+    background: rgba(55, 54, 132, .7);
+    color: #fff;
+    width: 100%;
+    padding: 5% 0;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+}
+
 /* Media Query for Tablet Viewport */
 @media screen and (min-width: 550px), print {
     
@@ -178,6 +209,16 @@ footer a {
         width: 500px;
         height: 450px;
     }
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 20px;
+    }
+
+    aside {
+        grid-column: 1/span 2;
+    }
     
 }
 
@@ -214,8 +255,19 @@ footer a {
         margin: 0 2%;
     }
     
-}
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    figcaption{
+        font-size: 1em;
+    }
 
+    aside{
+        grid-column: 1/span 4;
+    }
+}
 /* Media Query for Print */
 @media print {
     
